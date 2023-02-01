@@ -1,0 +1,19 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<h2>Details</h2>
+<p>
+    <b>Name: </b> @Model.Name
+    <b>Salary: </b> @Model.Salary
+    <b>Department: </b> @Model.Department
+</p>
+
+<a asp-route-id="@Model.Id" asp-action="Update">
+    <button>Update Data</button>
+</a>
+
+<form asp-route-id="@Model.Id" asp-action="Delete" method="post">
+    <button type="submit">Delete Emlpoyee</button>
+</form>
