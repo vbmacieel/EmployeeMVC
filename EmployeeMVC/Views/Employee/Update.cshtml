@@ -3,21 +3,23 @@
     ViewData["Title"] = "Update Employee";
 }
 
-<h2>Update an Employee</h2>
+<h1 class="display-3">Update an Employee</h1>
 <form method="post">
-    <p>
-        <lable asp-for="Name">New employee name: </lable>
-        <input asp-for="Name" />
-    </p>
-    <p>
-        <lable asp-for="Salary">New employee salary: </lable>
-        <input asp-for="Salary" />
-    </p>
-    <p>
-        <lable asp-for="Department">New employee department: </lable>
-        <input asp-for="Department" />
-    </p>
-    <p>
-        <button type="submit">Submit</button>
-    </p>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input asp-for="Name" class="form-control">
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Salary" class="form-label">Salary</label>
+        <input asp-for="Salary" class="form-control">
+        <span asp-validation-for="Salary"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Department" class="form-label">Department</label>
+        <input asp-for="Department" class="form-control">
+        <span asp-validation-for="Department"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
 </form> 
+

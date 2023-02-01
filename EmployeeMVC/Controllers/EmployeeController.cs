@@ -28,8 +28,12 @@ namespace EmployeeMVC.Controllers
         [HttpPost]
         public IActionResult Create(Employee employee)
         {
-            _employeeService.Create(employee);
-            return View("Thanks", employee);
+            if (ModelState.IsValid)
+            {
+                _employeeService.Create(employee);
+                return View("Thanks", employee);
+            }
+            return View();
         }
 
         public IActionResult Detail(int id)
@@ -56,8 +60,12 @@ namespace EmployeeMVC.Controllers
         [HttpPost]
         public IActionResult Update(Employee employee, int id)
         {
-            _employeeService.Update(employee, id);
-            return RedirectToAction(nameof(Index));
+            if (ModelState.IsValid)
+            {
+                _employeeService.Update(employee, id);
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
         }
     }
 }

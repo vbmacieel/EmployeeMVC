@@ -3,17 +3,19 @@
     ViewData["Title"] = "Employee Details";
 }
 
-<h2>Details</h2>
-<p>
-    <b>Name: </b> @Model.Name
-    <b>Salary: </b> @Model.Salary
-    <b>Department: </b> @Model.Department
-</p>
-
-<a asp-route-id="@Model.Id" asp-action="Update">
-    <button>Update Data</button>
-</a>
-
-<form asp-route-id="@Model.Id" asp-action="Delete" method="post">
-    <button type="submit">Delete Emlpoyee</button>
-</form>
+<h1 class="display-3">Details</h1>
+<div class="card">
+    <div class="card-body">
+        <p><span class="h5">Name: </span> @Model.Name</p>
+        <p><span class="h5">Salary: </span> @Model.Salary</p>
+        <p><span class="h5">Department: </span> @Model.Department</p>
+    </div>
+    <div class="card-footer d-flex justify-content-lg-start">
+        <form asp-route-id="@Model.Id" asp-action="Update" method="get">
+            <button class="btn btn-primary" type="submit">Update</button>
+        </form>
+        <form asp-route-id="@Model.Id" asp-action="Delete" method="post">
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+    </div>
+</div>
